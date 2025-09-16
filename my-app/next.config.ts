@@ -42,7 +42,7 @@ const nextConfig: NextConfig = {
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' https://mc.yandex.ru",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "img-src 'self' data: blob: https://mc.yandex.ru https://images.unsplash.com https://randomuser.me",
+              "img-src 'self' data: blob: https://mc.yandex.ru https://images.unsplash.com https://randomuser.me https://drkerylady.ru",
               "font-src 'self' https://fonts.gstatic.com data:",
               "connect-src 'self' https://mc.yandex.ru",
               "frame-src 'self' https://mc.yandex.ru",

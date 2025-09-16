@@ -38,7 +38,7 @@ export const EducationIcon = ({ className }: { className?: string }) => (
 );
 
 export const AllServicesIcon = ({ className }: { className?: string }) => (
-  <img src="/uslugi.png" alt="Все услуги" data-icon className={className} style={{ filter: 'hue-rotate(0deg) saturate(1.5)' }} />
+  <img src="/procedures.png" alt="Все услуги" data-icon className={className} style={{ filter: 'hue-rotate(0deg) saturate(1.5)' }} />
 );
 
 export const GlazIcon = ({ className }: { className?: string }) => (
