@@ -73,7 +73,8 @@ export function CommerceHero() {
                 objectPosition: 'center',
                 minHeight: '100%',
                 minWidth: '100%',
-                zIndex: 1
+                zIndex: 1,
+                display: 'block'
               }}
             />
             <img
@@ -185,7 +186,7 @@ export function CommerceHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="sm:relative absolute bottom-8 left-4 right-4 sm:left-auto sm:right-auto sm:bottom-auto text-left pl-4 pt-0 sm:pt-0 z-10 flex flex-col sm:justify-start sm:h-auto pb-0 sm:pb-0 translate-y-[499px] translate-x-[2px] sm:translate-y-0 sm:translate-x-0">
+            <div className="sm:relative absolute bottom-8 left-4 right-4 sm:left-auto sm:right-auto sm:bottom-auto text-left pl-4 pt-0 sm:pt-0 z-20 flex flex-col sm:justify-start sm:h-auto pb-0 sm:pb-0 sm:translate-y-0 sm:translate-x-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent sm:bg-transparent rounded-lg sm:rounded-none">
               <motion.h1
                 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-8 leading-none"
                 initial={{ opacity: 0, y: 20 }}
