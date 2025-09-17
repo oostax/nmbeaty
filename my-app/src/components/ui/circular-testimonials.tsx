@@ -101,8 +101,18 @@ export const CircularTestimonials = ({
       setIsMobile(window.innerWidth < 640);
     }
     handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    // Throttle resize events for performance
+    let timeoutId: NodeJS.Timeout;
+    const throttledResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(handleResize, 100);
+    };
+    
+    window.addEventListener("resize", throttledResize, { passive: true });
+    return () => {
+      window.removeEventListener("resize", throttledResize);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   // Autoplay (stable interval, unaffected by re-renders)
@@ -294,7 +304,7 @@ export const CircularTestimonials = ({
             </AnimatePresence>
           </div>
 
-          {/* Десктопная версия - с анимациями */}
+          {/* Десктопная версия - с упрощенными анимациями */}
           <div className="hidden sm:block">
             <AnimatePresence mode="wait">
               <motion.div
@@ -303,7 +313,7 @@ export const CircularTestimonials = ({
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                transition={{ duration: 0.2, ease: "easeOut" }} // Ускорили анимацию
               >
                 <h3
                   className="name"
@@ -317,33 +327,15 @@ export const CircularTestimonials = ({
                 >
                   {activeTestimonial.designation}
                 </p>
+                {/* Убираем сложную анимацию по словам для лучшей производительности */}
                 <motion.p
                   className="quote"
                   style={{ color: colorTestimony, fontSize: fontSizeQuote }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.15, ease: "easeOut" }}
                 >
-                  {activeTestimonial.quote.split(" ").map((word, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{
-                        filter: "blur(10px)",
-                        opacity: 0,
-                        y: 5,
-                      }}
-                      animate={{
-                        filter: "blur(0px)",
-                        opacity: 1,
-                        y: 0,
-                      }}
-                      transition={{
-                        duration: 0.22,
-                        ease: "easeInOut",
-                        delay: 0.025 * i,
-                      }}
-                      style={{ display: "inline-block" }}
-                    >
-                      {word}&nbsp;
-                    </motion.span>
-                  ))}
+                  {activeTestimonial.quote}
                 </motion.p>
               </motion.div>
             </AnimatePresence>
@@ -386,6 +378,7 @@ export const CircularTestimonials = ({
           max-width: 56rem;
           padding: 1rem;
           font-family: 'Montserrat', sans-serif;
+          margin: 0 auto;
         }
         .testimonial-grid {
           display: grid;
@@ -402,8 +395,11 @@ export const CircularTestimonials = ({
           width: 100%;
           height: 100%;
           object-fit: cover;
+          object-position: center;
           border-radius: 1.5rem;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          will-change: transform; /* Оптимизация для GPU */
+          backface-visibility: hidden; /* Предотвращает мерцание */
         }
         .testimonial-content {
           display: flex;
@@ -414,7 +410,9 @@ export const CircularTestimonials = ({
           font-weight: bold;
           margin-bottom: 0.25rem;
           font-family: 'Montserrat', sans-serif;
-          white-space: nowrap;
+          white-space: normal;
+          word-wrap: break-word;
+          hyphens: auto;
         }
         .designation {
           margin-bottom: 2rem;
@@ -445,23 +443,56 @@ export const CircularTestimonials = ({
           display: inline-block;
         }
         @media (max-width: 639px) {
+          .testimonial-container {
+            padding: 0.25rem;
+            max-width: 100%;
+            margin: 0 auto;
+            margin-bottom: 50px; /* Уменьшаем отступ снизу */
+            /* Оптимизация для мобильных */
+            contain: layout style paint;
+            will-change: auto;
+          }
+          .testimonial-grid {
+            gap: 0.5rem; /* Оптимизированный отступ */
+            justify-items: center; /* Центрируем элементы */
+          }
+          .image-container {
+            height: 14rem; /* Увеличиваем размер карточек */
+            width: 14rem; /* Делаем квадратным */
+            margin: 0 auto 0.5rem auto; /* Центрируем */
+            margin-bottom: 0.5rem; /* Оптимизированный отступ */
+          }
           .testimonial-content {
-            margin-top: -2rem;
-            padding-bottom: 2rem;
-            min-height: 200px;
+            margin-top: 0;
+            padding: 0 0.25rem 50px 0.25rem; /* Уменьшаем padding-bottom */
+            min-height: auto;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
           }
+          .name {
+            font-size: 18px !important; /* Возвращаем нормальный размер шрифта */
+            line-height: 1.3;
+            margin-bottom: 0.25rem; /* Оптимизированный отступ */
+            white-space: normal;
+            word-wrap: break-word;
+            hyphens: auto;
+          }
           .designation {
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem; /* Оптимизированный отступ */
+            font-size: 14px !important; /* Возвращаем нормальный размер шрифта */
           }
           .quote {
-            font-size: 16px !important;
+            font-size: 14px !important; /* Возвращаем нормальный размер шрифта */
+            line-height: 1.5;
             flex-grow: 1;
+            white-space: normal;
+            word-wrap: break-word;
+            hyphens: auto;
+            margin-bottom: 0.5rem; /* Оптимизированный отступ снизу */
           }
           .testimonial-grid.step-2 {
-            transform: translateY(-20px);
+            transform: translateY(-5px);
           }
         }
         @media (min-width: 640px) {

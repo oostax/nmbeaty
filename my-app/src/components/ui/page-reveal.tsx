@@ -9,6 +9,28 @@ type PageRevealProps = {
 }
 
 export function PageReveal({ children, className }: PageRevealProps) {
+  const [isMobile, setIsMobile] = React.useState<boolean | null>(null)
+
+  React.useEffect(() => {
+    const handle = () => setIsMobile(window.innerWidth < 768)
+    handle()
+    window.addEventListener("resize", handle)
+    window.addEventListener("orientationchange", handle)
+    return () => {
+      window.removeEventListener("resize", handle)
+      window.removeEventListener("orientationchange", handle)
+    }
+  }, [])
+
+  if (isMobile === null) {
+    return <div className={className}>{children}</div>
+  }
+
+  if (isMobile) {
+    // On mobile: no initial load animation
+    return <div className={className}>{children}</div>
+  }
+
   return (
     <motion.div
       className={className}

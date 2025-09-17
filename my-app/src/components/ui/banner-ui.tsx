@@ -12,16 +12,16 @@ export default function Example() {
 
     if (!mounted) {
         return (
-            <section className="flex flex-col items-center justify-center mx-auto max-md:mx-2 max-md:px-2 max-w-2xl w-full text-center rounded-2xl py-12 md:py-16 font-montserrat bg-black/30 backdrop-blur-sm border border-white/20">
-                <h1 className="text-2xl md:text-3xl font-medium text-white max-w-2xl">Ошибка 404. Страница не найдена.</h1>
+            <section className="flex flex-col items-center justify-center mx-auto max-md:mx-2 max-md:px-2 w-full text-center rounded-2xl py-6 md:py-12 font-montserrat bg-black/30 backdrop-blur-sm border border-white/20">
+                <h1 className="text-sm md:text-2xl font-medium text-white whitespace-nowrap leading-tight">Ошибка 404. Страница не найдена.</h1>
                 <div className="h-[3px] w-32 my-1 bg-gradient-to-l from-transparent to-white"></div>
-                <p className="text-sm md:text-base text-white max-w-xl">
+                <p className="text-[10px] md:text-base text-white leading-snug">
                     Нажмите на кнопку ниже, чтобы вернуться на<br />
                     существующую страницу.
                 </p>
                 <button 
                     onClick={() => window.location.href = '/'}
-                    className="px-10 py-3 mt-4 text-sm bg-white hover:bg-gray-100 hover:shadow-lg transition-all duration-300 rounded-full cursor-pointer transform hover:scale-105 active:scale-95"
+                    className="px-5 py-2 mt-3 text-[10px] md:text-sm bg-white hover:bg-gray-100 hover:shadow-lg transition-all duration-300 rounded-full cursor-pointer transform hover:scale-105 active:scale-95"
                 >
                     Вернуться
                 </button>
@@ -39,14 +39,14 @@ export default function Example() {
                     delay: 0.3, 
                     ease: "easeOut"
                 }}
-                className="flex flex-col items-center justify-center mx-auto max-md:mx-2 max-md:px-2 max-w-2xl w-full text-center rounded-2xl py-12 md:py-16 font-montserrat bg-black/30 backdrop-blur-sm border border-white/20"
+                className="flex flex-col items-center justify-center mx-auto max-md:mx-2 max-md:px-2 w-full text-center rounded-2xl py-6 md:py-12 font-montserrat bg-black/30 backdrop-blur-sm border border-white/20"
             >
                 {/* Заголовок с анимацией - появляется после плашки */}
                 <motion.h1 
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 1.3 }}
-                    className="text-2xl md:text-3xl font-medium text-white max-w-2xl"
+                    className="text-sm md:text-2xl font-medium text-white whitespace-nowrap leading-tight"
                 >
                     Ошибка 404. Страница не найдена.
                 </motion.h1>
@@ -64,7 +64,7 @@ export default function Example() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 1.7 }}
-                    className="text-sm md:text-base text-white max-w-xl"
+                    className="text-[10px] md:text-base text-white leading-snug"
                 >
                     Нажмите на кнопку ниже, чтобы вернуться на<br />
                     существующую страницу.
@@ -80,7 +80,7 @@ export default function Example() {
                         ease: "easeOut"
                     }}
                     onClick={() => window.location.href = '/'}
-                    className="px-10 py-3 mt-4 text-sm bg-white hover:bg-gray-100 hover:shadow-lg transition-all duration-300 rounded-full cursor-pointer transform hover:scale-105 active:scale-95"
+                    className="px-5 py-2 mt-3 text-[10px] md:text-sm bg-white hover:bg-gray-100 hover:shadow-lg transition-all duration-300 rounded-full cursor-pointer transform hover:scale-105 active:scale-95"
                 >
                     Вернуться
                 </motion.button>

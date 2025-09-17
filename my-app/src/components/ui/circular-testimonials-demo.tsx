@@ -67,7 +67,7 @@ export const CircularTestimonialsDemo = () => {
       <style dangerouslySetInnerHTML={{ __html: gradientAnimation }} />
       
       <div className="relative">
-        <div className="bg-white pt-0 pb-6 px-4 sm:p-8 md:p-20 rounded-[1rem] sm:rounded-[2rem] h-[750px] sm:h-auto sm:min-h-[500px] flex flex-wrap gap-4 sm:gap-6 items-center justify-start relative font-montserrat" style={{ position: 'relative' }}>
+        <div className="bg-white pt-0 pb-12 sm:pb-6 md:pb-20 px-1 sm:p-8 md:p-20 rounded-[1rem] sm:rounded-[2rem] h-auto sm:h-auto sm:min-h-[500px] flex flex-wrap gap-1 sm:gap-6 items-center justify-start relative font-montserrat" style={{ position: 'relative' }}>
 
         <div
           className="items-center justify-center relative flex"
@@ -163,13 +163,13 @@ export const CircularTestimonialsDemo = () => {
 
       {/* Цена над кнопкой - зафиксированная вне анимируемого контейнера */}
       <div
-        className="absolute bottom-20 sm:bottom-24 md:bottom-28 right-8 sm:right-6 md:right-12 flex items-center gap-1 sm:gap-2 font-montserrat z-50 translate-y-0 sm:translate-y-[-2px]"
+        className="absolute bottom-12 sm:bottom-24 md:bottom-28 right-1 sm:right-6 md:right-12 flex items-center gap-0.5 sm:gap-2 font-montserrat z-50 translate-y-0 sm:translate-y-[-2px]"
         style={{
           zIndex: 50
         }}
       >
         <span
-          className="text-lg sm:text-lg md:text-xl text-gray-500 line-through font-semibold"
+          className="text-base sm:text-lg md:text-xl text-gray-500 line-through font-semibold"
           style={{
             textDecorationColor: "#9ca3af",
           }}
@@ -177,7 +177,7 @@ export const CircularTestimonialsDemo = () => {
           1500 ₽
         </span>
         <span
-          className="text-2xl sm:text-xl md:text-2xl font-bold"
+          className="text-xl sm:text-xl md:text-2xl font-bold"
           style={{
             background: "linear-gradient(45deg, #c273f8, #c171f8, #dd2ffc, #c273f8)",
             backgroundSize: "300% 300%",
@@ -192,7 +192,7 @@ export const CircularTestimonialsDemo = () => {
       
       {/* Кнопка "Получить бесплатную консультацию" - зафиксированная вне анимируемого контейнера */}
       <div
-        className="absolute bottom-8 sm:bottom-6 md:bottom-12 right-8 sm:right-6 md:right-12 z-10"
+        className="absolute bottom-2 sm:bottom-6 md:bottom-12 right-1 sm:right-6 md:right-12 z-10"
         style={{
           zIndex: 10,
           transform: 'translateY(-1px)',
@@ -200,7 +200,7 @@ export const CircularTestimonialsDemo = () => {
       >
         <button 
           onClick={() => window.open('https://t.me/Kery_Lady', '_blank')}
-          className="bg-gradient-to-r from-gray-700 via-black to-gray-700 text-white px-6 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-md sm:rounded-lg text-sm sm:text-sm md:text-base font-semibold hover:scale-105 transition-all duration-300 cursor-pointer font-montserrat"
+          className="bg-gradient-to-r from-gray-700 via-black to-gray-700 text-white px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-md sm:rounded-lg text-sm sm:text-sm md:text-base font-semibold hover:scale-105 transition-all duration-300 cursor-pointer font-montserrat"
         >
           <span className="hidden sm:inline">Получить бесплатную консультацию</span>
           <span className="sm:hidden">Бесплатная консультация</span>

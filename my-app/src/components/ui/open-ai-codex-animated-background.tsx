@@ -34,17 +34,26 @@ export const useWindowSize = () => {
 };
 
 export const Component = () => {
-
   const { width, height, mounted } = useWindowSize();
 
+  // Match server-rendered markup on first paint to avoid hydration mismatch
   if (!mounted) {
-    return <div className="w-full h-screen" />;
+    return <div className="absolute inset-0 w-full h-full" />;
   }
 
   return (
-    <div className={cn("flex flex-col items-center")}>
-        <UnicornScene 
-        production={true} projectId="1grEuiVDSVmyvEMAYhA6" width={width} height={height} />
+    <div
+      className={cn("fixed inset-0 w-[100vw] h-[100vh]")}
+      style={{
+        overflow: 'hidden',
+      }}
+    >
+      <UnicornScene
+        production={true}
+        projectId="1grEuiVDSVmyvEMAYhA6"
+        width={Math.max(width || window.innerWidth || 1, 1)}
+        height={Math.max(height || window.innerHeight || 1, 1)}
+      />
     </div>
   );
 };

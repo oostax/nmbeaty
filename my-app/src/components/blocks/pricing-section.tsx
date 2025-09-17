@@ -158,18 +158,18 @@ function PricingSection({ className }: PricingSectionProps) {
 
   const buttonStyles = {
     default: cn(
-      "h-12 bg-white dark:bg-zinc-900",
-      "hover:bg-zinc-50 dark:hover:bg-zinc-800",
-      "text-zinc-900 dark:text-zinc-100",
-      "border border-zinc-200 dark:border-zinc-800",
-      "hover:border-zinc-300 dark:hover:border-zinc-700",
+      "h-12 bg-white",
+      "hover:bg-zinc-50",
+      "text-zinc-900",
+      "border border-zinc-200",
+      "hover:border-zinc-300",
       "shadow-sm hover:shadow-md",
       "text-sm font-medium",
     ),
     highlight: cn(
-      "h-12 bg-zinc-900 dark:bg-zinc-100",
-      "hover:bg-zinc-800 dark:hover:bg-zinc-300",
-      "text-white dark:text-zinc-900",
+      "h-12 bg-zinc-900",
+      "hover:bg-zinc-800",
+      "text-white",
       "shadow-[0_1px_15px_rgba(0,0,0,0.1)]",
       "hover:shadow-[0_1px_20px_rgba(0,0,0,0.15)]",
       "font-semibold text-base",
@@ -178,8 +178,8 @@ function PricingSection({ className }: PricingSectionProps) {
 
   const badgeStyles = cn(
     "px-4 py-1.5 text-sm font-medium",
-    "bg-zinc-900 dark:bg-zinc-100",
-    "text-white dark:text-zinc-900",
+    "bg-zinc-900",
+    "text-white",
     "border-none shadow-lg",
   )
 
@@ -187,27 +187,27 @@ function PricingSection({ className }: PricingSectionProps) {
   const getServiceIcon = (category: string) => {
     switch (category) {
       case "Инъекционные методики":
-        return <FeaturedIcon color="brand" icon={InjectionIcon} theme="dark" size="lg" category="Инъекционные методики" />
+        return <FeaturedIcon color="brand" icon={InjectionIcon} theme="light" size="lg" category="Инъекционные методики" />
       case "Ботокс":
-        return <FeaturedIcon color="brand" icon={BotoxIcon} theme="dark" size="lg" category="Ботокс" />
+        return <FeaturedIcon color="brand" icon={BotoxIcon} theme="light" size="lg" category="Ботокс" />
       case "Контурная пластика":
-        return <FeaturedIcon color="brand" icon={ContourIcon} theme="dark" size="lg" category="Контурная пластика" />
+        return <FeaturedIcon color="brand" icon={ContourIcon} theme="light" size="lg" category="Контурная пластика" />
       case "Увеличение губ":
-        return <FeaturedIcon color="brand" icon={LipIcon} theme="dark" size="lg" category="Увеличение губ" />
+        return <FeaturedIcon color="brand" icon={LipIcon} theme="light" size="lg" category="Увеличение губ" />
       case "Комплексные процедуры":
-        return <FeaturedIcon color="brand" icon={ComplexIcon} theme="dark" size="lg" category="Комплексные процедуры" />
+        return <FeaturedIcon color="brand" icon={ComplexIcon} theme="light" size="lg" category="Комплексные процедуры" />
       case "Нитевые методики":
-        return <FeaturedIcon color="brand" icon={ThreadIcon} theme="dark" size="lg" category="Нитевые методики" />
+        return <FeaturedIcon color="brand" icon={ThreadIcon} theme="light" size="lg" category="Нитевые методики" />
       case "Мезотерапия":
-        return <FeaturedIcon color="brand" icon={MesotherapyIcon} theme="dark" size="lg" category="Мезотерапия" />
+        return <FeaturedIcon color="brand" icon={MesotherapyIcon} theme="light" size="lg" category="Мезотерапия" />
       case "Эстетика лица":
-        return <FeaturedIcon color="brand" icon={GlazIcon} theme="dark" size="lg" category="Эстетика лица" />
+        return <FeaturedIcon color="brand" icon={GlazIcon} theme="light" size="lg" category="Эстетика лица" />
       case "Slim & Wellness":
-        return <FeaturedIcon color="brand" icon={SlimIcon} theme="dark" size="lg" category="Slim & Wellness" />
+        return <FeaturedIcon color="brand" icon={SlimIcon} theme="light" size="lg" category="Slim & Wellness" />
       case "Консультации":
-        return <FeaturedIcon color="brand" icon={ConsultationIcon} theme="dark" size="lg" category="Консультации" />
+        return <FeaturedIcon color="brand" icon={ConsultationIcon} theme="light" size="lg" category="Консультации" />
       default:
-        return <FeaturedIcon color="brand" icon={AllServicesIcon} theme="dark" size="lg" category="Все услуги" />
+        return <FeaturedIcon color="brand" icon={AllServicesIcon} theme="light" size="lg" category="Все услуги" />
     }
   }
 
@@ -282,11 +282,11 @@ function PricingSection({ className }: PricingSectionProps) {
                       "rounded-full border shadow-sm p-1 transition-colors duration-200",
                       activeTab === tab
                         ? hoveredTab === tab
-                          ? "bg-black dark:bg-white border-black dark:border-white"
-                          : "bg-zinc-900 dark:bg-zinc-100 border-zinc-900 dark:border-zinc-100"
+                          ? "bg-black border-black"
+                          : "bg-zinc-900 border-zinc-900"
                         : hoveredTab === tab
-                          ? "bg-zinc-100 dark:bg-zinc-700 border-zinc-300 dark:border-zinc-600"
-                          : "bg-white dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700"
+                          ? "bg-zinc-100 border-zinc-300"
+                          : "bg-white border-zinc-200"
                     )}
                     onMouseEnter={() => setHoveredTab(tab)}
                     onMouseLeave={() => setHoveredTab(null)}
@@ -298,8 +298,8 @@ function PricingSection({ className }: PricingSectionProps) {
                       className={cn(
                         "px-3 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-medium rounded-full whitespace-nowrap flex-shrink-0 relative overflow-hidden",
                         activeTab === tab
-                          ? "text-white dark:text-zinc-900"
-                          : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100",
+                          ? "text-white"
+                          : "text-zinc-600 hover:text-zinc-900",
                       )}
                     >
                       <span className="relative z-10">{tab}</span>
@@ -317,11 +317,11 @@ function PricingSection({ className }: PricingSectionProps) {
                       "rounded-full border shadow-sm p-1 transition-colors duration-200",
                       activeTab === tab
                         ? hoveredTab === tab
-                          ? "bg-black dark:bg-white border-black dark:border-white"
-                          : "bg-zinc-900 dark:bg-zinc-100 border-zinc-900 dark:border-zinc-100"
+                          ? "bg-black border-black"
+                          : "bg-zinc-900 border-zinc-900"
                         : hoveredTab === tab
-                          ? "bg-zinc-100 dark:bg-zinc-700 border-zinc-300 dark:border-zinc-600"
-                          : "bg-white dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700"
+                          ? "bg-zinc-100 border-zinc-300"
+                          : "bg-white border-zinc-200"
                     )}
                     onMouseEnter={() => setHoveredTab(tab)}
                     onMouseLeave={() => setHoveredTab(null)}
@@ -333,8 +333,8 @@ function PricingSection({ className }: PricingSectionProps) {
                       className={cn(
                         "px-3 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-medium rounded-full whitespace-nowrap flex-shrink-0 relative overflow-hidden",
                         activeTab === tab
-                          ? "text-white dark:text-zinc-900"
-                          : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100",
+                          ? "text-white"
+                          : "text-zinc-600 hover:text-zinc-900",
                       )}
                     >
                       <span className="relative z-10">{tab}</span>
@@ -350,7 +350,7 @@ function PricingSection({ className }: PricingSectionProps) {
             <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-6">
               <SearchX className="w-10 h-10 text-gray-400" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2 font-montserrat">
+            <h3 className="text-xl font-semibold text-gray-900 mb-2 font-mонтserrat">
               Ничего не удалось найти
             </h3>
             {(() => {
@@ -428,7 +428,7 @@ function PricingSection({ className }: PricingSectionProps) {
               return suggestions.length > 0 ? (
                 <div className="text-center">
                   <p className="text-gray-600 font-montserrat">
-                    Возможно, Вы имели в виду:{" "}
+                    Возможно, Вы имели в виду: {" "}
                     <button 
                       onClick={() => {
                         const service = suggestions[0];
@@ -463,8 +463,8 @@ function PricingSection({ className }: PricingSectionProps) {
                 "relative group backdrop-blur-sm",
                 "rounded-3xl transition-all duration-300",
                 "flex flex-col",
-                "bg-white dark:bg-zinc-800",
-                "border border-zinc-200 dark:border-zinc-700 shadow-md",
+                "bg-white",
+                "border border-zinc-200 shadow-md",
                 "hover:translate-y-0 hover:shadow-lg",
               )}
             >
@@ -473,14 +473,14 @@ function PricingSection({ className }: PricingSectionProps) {
                   <div className="flex-shrink-0">
                     {getServiceIcon(service.category)}
                   </div>
-                  <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+                  <h3 className="text-lg font-semibold text-zinc-900">
                     {service.name}
                   </h3>
                 </div>
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <Clock className="w-4 h-4 text-zinc-500" />
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                    <p className="text-sm text-zinc-600">
                       Длительность: {service.duration}
                     </p>
                   </div>
@@ -495,7 +495,7 @@ function PricingSection({ className }: PricingSectionProps) {
                 {service.ampoules && (
                   <div className="flex items-center gap-2 mb-2">
                     <Pill className="w-4 h-4 text-zinc-500" />
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                    <p className="text-sm text-zinc-600">
                       {service.ampoules}
                     </p>
                   </div>
@@ -505,7 +505,7 @@ function PricingSection({ className }: PricingSectionProps) {
                   {service.oldPrice && service.discount ? (
                     <div>
                       <div className="flex items-center gap-2">
-                        <p className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+                        <p className="text-lg font-bold text-zinc-900">
                           {service.price}
                         </p>
                         <p className="text-sm text-zinc-400 line-through">
@@ -514,7 +514,7 @@ function PricingSection({ className }: PricingSectionProps) {
                       </div>
                     </div>
                   ) : (
-                    <p className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+                    <p className="text-lg font-bold text-zinc-900">
                       {service.price}
                     </p>
                   )}
@@ -522,7 +522,7 @@ function PricingSection({ className }: PricingSectionProps) {
                 
                 {service.category === "Комплексные процедуры" && (
                   <div className="mb-4">
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400 italic">
+                    <p className="text-xs text-zinc-500 italic">
                       Зоны ботокса и препараты подбираются индивидуально, итоговая сумма может варьироваться.
                     </p>
                   </div>

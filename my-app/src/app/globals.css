@@ -121,6 +121,45 @@ html {
   scroll-padding-top: 2rem;
 }
 
+/* Мобильные оптимизации */
+@media (max-width: 768px) {
+  /* Оптимизация для GPU */
+  .transform-gpu {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+  
+  /* Упрощаем сложные эффекты */
+  .backdrop-blur-sm,
+  .backdrop-blur-md,
+  .backdrop-blur-lg {
+    backdrop-filter: none !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+  
+  /* Отключаем тяжелые тени для лучшей производительности */
+  .shadow-lg,
+  .shadow-xl,
+  .shadow-2xl {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* Ускоряем анимации */
+  * {
+    transition-duration: 0.15s !important;
+  }
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Плавный скролл для всех элементов */
 * {
   scroll-behavior: smooth;

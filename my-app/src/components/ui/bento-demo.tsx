@@ -8,7 +8,14 @@ const features = [
     name: "Диплом врача-косметолога",
     description: <>Высшее медицинское образование<br />по специальности</>,
     cta: "Государственный диплом",
-    background: <img src="/diploma.png" alt="Диплом врача-косметолога Дрожжиной Карины Тагировны" className="absolute -right-88 -top-2 sm:-right-20 sm:top-8 pointer-events-none transform -rotate-20 sm:rotate-0" style={{ width: '570px !important', height: '540px !important', maxWidth: 'none !important' }} />,
+    background: (
+      <img 
+        src="/diploma.png" 
+        alt="Диплом врача-косметолога Дрожжиной Карины Тагировны" 
+        className="absolute -right-64 top-2 sm:-right-20 sm:top-8 md:top-10 lg:top-8 md:scale-20 lg:scale-105 pointer-events-none transform -rotate-20 sm:rotate-0 md:-right-20"
+        style={{ width: '570px !important', height: '540px !important', maxWidth: 'none !important' }} 
+      />
+    ),
     className: "md:row-start-1 md:row-end-4 md:col-start-2 md:col-end-3",
   },
   {

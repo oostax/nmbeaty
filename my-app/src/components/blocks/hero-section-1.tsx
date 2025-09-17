@@ -25,17 +25,15 @@ const transitionVariants = {
     item: {
         hidden: {
             opacity: 0,
-            filter: 'blur(12px)',
-            y: 12,
+            y: 20, // Убираем blur для лучшей производительности
         },
         visible: {
             opacity: 1,
-            filter: 'blur(0px)',
             y: 0,
             transition: {
-                type: 'spring' as const,
-                bounce: 0.3,
-                duration: 1.5,
+                type: 'tween' as const, // Заменяем spring на tween для лучшей производительности
+                ease: 'easeOut',
+                duration: 0.6, // Уменьшаем длительность
             },
         },
     },
