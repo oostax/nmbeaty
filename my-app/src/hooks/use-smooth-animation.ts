@@ -9,7 +9,7 @@ interface UseSmoothAnimationOptions {
 }
 
 export function useSmoothAnimation(options: UseSmoothAnimationOptions = {}) {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLElement | null>(null);
   const {
     threshold = 0.1,
     rootMargin = '0px 0px -50px 0px',

@@ -12,7 +12,6 @@ interface SmoothAnimateProps {
   direction?: 'up' | 'down' | 'left' | 'right' | 'fade';
   threshold?: number;
   rootMargin?: string;
-  as?: keyof JSX.IntrinsicElements;
 }
 
 const directionVariants = {
@@ -31,10 +30,9 @@ export function SmoothAnimate({
   direction = 'up',
   threshold = 0.1,
   rootMargin = '0px 0px -50px 0px',
-  as: Component = 'div',
   ...props
 }: SmoothAnimateProps & MotionProps) {
-  const ref = useSmoothAnimation({ threshold, rootMargin, delay });
+  const ref = useSmoothAnimation({ threshold, rootMargin, delay }) as React.RefObject<HTMLDivElement>;
 
   const initial = directionVariants[direction];
   const animate = { 
@@ -48,7 +46,6 @@ export function SmoothAnimate({
   return (
     <motion.div
       ref={ref}
-      as={Component}
       className={`animate-optimized ${className}`}
       initial={{ ...initial, scale: 0.98, filter: 'blur(2px)' }}
       whileInView={animate}
@@ -81,7 +78,7 @@ export function SmoothImage({
   loading = 'lazy',
   delay = 0 
 }: SmoothImageProps) {
-  const ref = useSmoothAnimation({ delay });
+  const ref = useSmoothAnimation({ delay }) as React.RefObject<HTMLImageElement>;
 
   return (
     <motion.img
