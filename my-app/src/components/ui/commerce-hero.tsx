@@ -62,7 +62,7 @@ export function CommerceHero() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <img
-              src="/Drmobile.png"
+              src="/DRmobile.png"
               alt="Доктор Дрожжина Карина Тагировна - врач-косметолог с 10+ летним опытом работы в области эстетической медицины"
               className="w-full h-full object-cover object-center sm:hidden"
               style={{
