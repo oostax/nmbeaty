@@ -50,16 +50,16 @@ export function CommerceHero() {
 
         <motion.div 
           className="mt-0 mb-4 bg-gradient-to-b from-[#313245] to-[#55566d] rounded-3xl relative overflow-hidden w-full h-[600px]"
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, scale: 0.98, y: 15, filter: 'blur(2px)' }}
+          animate={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           {/* Фоновое изображение DRlong.png */}
           <motion.div 
             className="absolute inset-0 z-0"
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+            initial={{ opacity: 0, scale: 1.05, filter: 'blur(3px)' }}
+            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <img
               src="/Drmobile.png"
@@ -94,9 +94,9 @@ export function CommerceHero() {
           <header className="flex items-center relative z-20">
             <div className="hidden md:flex w-1/2 justify-end items-center pr-5 gap-4 ml-auto mt-8">
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3, delay: 0.2, ease: "easeInOut" }}
+                initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
                 <Button
                   variant="secondary"
@@ -181,16 +181,16 @@ export function CommerceHero() {
 
           <motion.section
             className="w-full px-6 pt-8 pb-16 sm:pt-48 relative z-10"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 15, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <div className="sm:relative absolute bottom-8 left-4 right-4 sm:left-auto sm:right-auto sm:bottom-auto text-left pl-4 pt-0 sm:pt-0 z-10 flex flex-col sm:justify-start sm:h-auto pb-0 sm:pb-0 translate-y-[499px] translate-x-[2px] sm:translate-y-0 sm:translate-x-0">
               <motion.h1
                 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-8 leading-none"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 15, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
                 <div className="flex flex-col text-left">
                   <div className="flex items-center gap-2 sm:gap-3 leading-none">
@@ -211,9 +211,9 @@ export function CommerceHero() {
               </motion.h1>
               <motion.p
                 className="text-base md:text-lg text-white max-w-2xl leading-relaxed text-left font-montserrat"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 15, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
                 <span className="sm:hidden">Врач-косметолог с более чем 10-летним<br />опытом работы в области эстетической<br />медицины.</span>
                 <span className="hidden sm:inline">Врач-косметолог с более чем 10-летним опытом работы в области эстетической медицины. Специализируется на инъекционных методиках, аппаратной косметологии и уходовых процедурах.</span>
@@ -228,9 +228,9 @@ export function CommerceHero() {
               {/* Мобильная версия - заголовок под карточкой */}
               <motion.div
                 className="group relative bg-[#f9f9f9] backdrop-blur-sm rounded-3xl p-6 sm:p-8 w-full aspect-square overflow-hidden transition-all duration-500"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.4, delay: index * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
                 <div 
                   className="absolute inset-0 z-20 cursor-pointer"

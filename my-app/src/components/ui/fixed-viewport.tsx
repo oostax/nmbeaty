@@ -77,7 +77,7 @@ export const FixedViewport: React.FC<FixedViewportProps> = ({
         alignItems: 'flex-start',
         justifyContent: 'center',
         overflowX: 'hidden',
-        overflowY: 'hidden',
+        overflowY: 'auto',
         touchAction: 'manipulation',
       }}
     >

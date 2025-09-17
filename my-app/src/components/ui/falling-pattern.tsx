@@ -126,9 +126,9 @@ export function FallingPattern({
 	return (
 		<div className={cn('relative h-full w-full p-1', className)}>
 			<motion.div
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ duration: 0.2 }}
+				initial={{ opacity: 0, scale: 0.98 }}
+				animate={{ opacity: 1, scale: 1 }}
+				transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
 				className="size-full"
 			>
 				<motion.div

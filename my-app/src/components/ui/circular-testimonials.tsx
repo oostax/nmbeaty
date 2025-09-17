@@ -171,45 +171,65 @@ export const CircularTestimonials = ({
     const isRight = (activeIndex + 1) % testimonialsLength === index;
     if (isActive) {
       return {
-        zIndex: 3,
+        zIndex: 50,
         opacity: 1,
         pointerEvents: "auto",
         transform: `translateX(0px) translateY(0px) scale(1) rotateY(0deg)`,
-        transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
+        transition: "all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        filter: "blur(0px)",
       };
     }
     if (isLeft) {
       return {
-        zIndex: 2,
-        opacity: 1,
+        zIndex: 40,
+        opacity: 0.8,
         pointerEvents: "auto",
-        transform: `translateX(-${gap}px) translateY(-${maxStickUp}px) scale(0.85) rotateY(15deg)`,
-        transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
+        transform: `translateX(-${gap}px) translateY(0px) scale(0.85) rotateY(15deg)`,
+        transition: "all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        filter: "blur(1px)",
       };
     }
     if (isRight) {
       return {
-        zIndex: 2,
-        opacity: 1,
+        zIndex: 40,
+        opacity: 0.8,
         pointerEvents: "auto",
-        transform: `translateX(${gap}px) translateY(-${maxStickUp}px) scale(0.85) rotateY(-15deg)`,
-        transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
+        transform: `translateX(${gap}px) translateY(0px) scale(0.85) rotateY(-15deg)`,
+        transition: "all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        filter: "blur(1px)",
       };
     }
     // Hide all other images
     return {
-      zIndex: 1,
+      zIndex: 30,
       opacity: 0,
       pointerEvents: "none",
-      transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
+      transform: `translateX(0px) translateY(0px) scale(0.8) rotateY(0deg)`,
+      transition: "all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      filter: "blur(2px)",
     };
   }
 
-  // Framer Motion variants for quote
+  // Framer Motion variants for quote - более плавные
   const quoteVariants = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 },
+    initial: { 
+      opacity: 0, 
+      y: 10, 
+      scale: 0.98,
+      filter: 'blur(2px)'
+    },
+    animate: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      filter: 'blur(0px)'
+    },
+    exit: { 
+      opacity: 0, 
+      y: -10, 
+      scale: 0.98,
+      filter: 'blur(2px)'
+    },
   };
 
   return (
@@ -280,7 +300,7 @@ export const CircularTestimonials = ({
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
                 <h3
                   className="name"
@@ -313,7 +333,7 @@ export const CircularTestimonials = ({
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                transition={{ duration: 0.2, ease: "easeOut" }} // Ускорили анимацию
+                transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
                 <h3
                   className="name"
@@ -389,6 +409,7 @@ export const CircularTestimonials = ({
           width: 100%;
           height: 16rem;
           perspective: 1000px;
+          z-index: 50; /* Добавляем высокий z-index для контейнера */
         }
         .testimonial-image {
           position: absolute;
@@ -426,7 +447,6 @@ export const CircularTestimonials = ({
         .arrow-buttons {
           display: flex;
           gap: 1.5rem;
-          padding-top: 3rem;
         }
         .arrow-button {
           width: 2.7rem;
@@ -461,6 +481,7 @@ export const CircularTestimonials = ({
             width: 14rem; /* Делаем квадратным */
             margin: 0 auto 0.5rem auto; /* Центрируем */
             margin-bottom: 0.5rem; /* Оптимизированный отступ */
+            z-index: 50; /* Высокий z-index для мобильной версии */
           }
           .testimonial-content {
             margin-top: 0;

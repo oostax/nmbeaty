@@ -58,7 +58,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased bg-gradient-to-br from-purple-50 to-pink-50`}>
         <ClientRoot>{children}</ClientRoot>
       </body>
     </html>

@@ -25,15 +25,19 @@ const transitionVariants = {
     item: {
         hidden: {
             opacity: 0,
-            y: 20, // Убираем blur для лучшей производительности
+            y: 15,
+            scale: 0.98,
+            filter: 'blur(2px)',
         },
         visible: {
             opacity: 1,
             y: 0,
+            scale: 1,
+            filter: 'blur(0px)',
             transition: {
-                type: 'tween' as const, // Заменяем spring на tween для лучшей производительности
-                ease: 'easeOut',
-                duration: 0.6, // Уменьшаем длительность
+                type: 'tween' as const,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                duration: 0.5,
             },
         },
     },
@@ -362,7 +366,7 @@ export function HeroSection() {
                     <div className="container mx-auto px-4">
                       <div className="mx-auto max-w-6xl relative">
                         {/* Независимый блок: круг в правом верхнем углу белой плашки (оверлей над секцией консультации) */}
-                        <div className="hidden sm:block absolute z-[100]" style={{ top: '-3.6rem', right: '-4rem' }}>
+                        <div className="hidden md:block absolute z-[100]" style={{ top: '-3.6rem', right: '-4rem' }}>
                           <CircularText
                             text={"бесплатная консультация * скидка 100% * "}
                             spinDuration={18}

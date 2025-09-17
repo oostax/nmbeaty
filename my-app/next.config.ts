@@ -18,7 +18,20 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'framerusercontent.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
+    // Включаем оптимизацию изображений
+    unoptimized: false,
+    // Разрешаем загрузку локальных изображений
+    domains: ['localhost'],
+    // Настройки для лучшей производительности
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   async headers() {
     return [
@@ -42,7 +55,7 @@ const nextConfig: NextConfig = {
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' https://mc.yandex.ru",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "img-src 'self' data: blob: https://mc.yandex.ru https://images.unsplash.com https://randomuser.me https://drkerylady.ru",
+              "img-src 'self' data: blob: https: http:",
               "font-src 'self' https://fonts.gstatic.com data:",
               "connect-src 'self' https://mc.yandex.ru",
               "frame-src 'self' https://mc.yandex.ru",

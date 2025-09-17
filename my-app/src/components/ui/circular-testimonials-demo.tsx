@@ -66,8 +66,8 @@ export const CircularTestimonialsDemo = () => {
     <>
       <style dangerouslySetInnerHTML={{ __html: gradientAnimation }} />
       
-      <div className="relative">
-        <div className="bg-white pt-0 pb-12 sm:pb-6 md:pb-20 px-1 sm:p-8 md:p-20 rounded-[1rem] sm:rounded-[2rem] h-auto sm:h-auto sm:min-h-[500px] flex flex-wrap gap-1 sm:gap-6 items-center justify-start relative font-montserrat" style={{ position: 'relative' }}>
+      <div className="relative z-10 circular-testimonials-mobile">
+        <div className="bg-white pt-8 sm:pt-0 pb-12 sm:pb-6 md:pb-20 px-1 sm:p-8 md:p-20 rounded-[1rem] sm:rounded-[2rem] h-auto sm:h-auto sm:min-h-[500px] flex flex-wrap gap-1 sm:gap-6 items-center justify-start relative font-montserrat z-10" style={{ position: 'relative' }}>
 
         <div
           className="items-center justify-center relative flex"

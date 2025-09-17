@@ -40,11 +40,11 @@ const CircularText = ({
     controls.start({
       rotate: currentRotation + 360,
       scale: 1,
-      // framer-motion v10: transition must be a flat Transition, не объект с rotate/scale
       transition: {
         ease: 'linear',
         duration: spinDuration,
-        type: 'tween'
+        type: 'tween',
+        repeat: Infinity,
       },
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
